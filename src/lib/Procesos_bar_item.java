@@ -18,10 +18,12 @@ import static javafx.scene.layout.Priority.ALWAYS;
  * @author FLAVIO
  */
 public final class Procesos_bar_item extends HBox{
+    private int id;
     private Label nombre;
     private ProgressBar proceso;
 
-    public Procesos_bar_item(String nombre, int porc) {
+    public Procesos_bar_item(String nombre, int porc, int id) {
+        this.id = id;
         this.nombre = new Label(nombre);
         this.nombre.setMaxHeight(MAX_VALUE);
         this.nombre.setMaxWidth(MAX_VALUE);
@@ -33,6 +35,10 @@ public final class Procesos_bar_item extends HBox{
         getChildren().addAll(this.nombre, this.proceso);
         setPadding(new Insets(5,5,5,5));
         setSpacing(5);
+    }
+    
+    public int getIdProceso(){
+        return this.id;
     }
     
     public void setPorc(int porc){

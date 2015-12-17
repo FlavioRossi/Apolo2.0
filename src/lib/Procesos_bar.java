@@ -17,6 +17,7 @@ public class Procesos_bar extends VBox {
     //Patron singleton
     private static Procesos_bar procesos_bar;
     private ArrayList<Procesos_bar_item> procesos;
+    private int numProceso = 0;
     
     private Procesos_bar(){
         procesos = new ArrayList<Procesos_bar_item>();
@@ -29,24 +30,40 @@ public class Procesos_bar extends VBox {
         return procesos_bar;
     }
     
-    public boolean nuevoProceso(String nombre, int porc){
-        Procesos_bar_item proceso = new Procesos_bar_item(nombre, porc);
+    public Integer nuevoProceso(String nombre, int porc){
+        numProceso++;
+        Procesos_bar_item proceso = new Procesos_bar_item(nombre, porc, numProceso);
         procesos.add(proceso);
         getChildren().add(proceso);
-        return true;
+        return numProceso;
     }
     
     public boolean finalizaProceso(int id){
-        getChildren().remove(procesos.get(id));
-        procesos.remove(id);
-        return true;
+        for(Procesos_bar_item proceso : procesos){
+            if (id == proceso.getIdProceso()){
+                procesos.remove(proceso);
+                getChildren().remove(proceso);
+                return true;
+            }
+        }
+        return false;
     }
     
     public boolean porcProceso(int id, int porc){
-        procesos.get(id).setPorc(porc);
-        return true;
+        for(Procesos_bar_item proceso : procesos){
+            if (id == proceso.getIdProceso()){
+                proceso.setPorc(porc);
+                return true;
+            }
+        }
+        return false;
     }
     public int getPorc(int id){
-        return procesos.get(id).getPorc();
+        for(Procesos_bar_item proceso : procesos){
+            if (id == proceso.getIdProceso()){
+                return proceso.getPorc();
+            }
+        }
+        return 0;
     }
 }
