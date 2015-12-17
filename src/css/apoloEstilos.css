@@ -1,0 +1,62 @@
+.root{
+    /* Tipo de letra del sistema y estilos generales */
+    
+}
+
+//menu lateral
+.menu_LI{
+    -fx-background: #D3D3D3;
+    -fx-padding: 0;
+}
+.menu_LI .menu_LI_menu{
+    -fx-spacing: 10;
+    -fx-alignment: TOP_LEFT;
+}
+
+.menu_LI .menu_LI_contenedor{
+    -fx-padding: 0 5 0 5;
+    -fx-spacing: 5;
+    -fx-alignment: TOP_LEFT;
+}
+.menu_LI .menu_LI_buscar{
+    -fx-font-size: 14;
+}
+.menu_LI .menu_LI_contenedor .menu_LI_modulo{
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-text-fill: #a19e9f;
+}
+.menu_LI .menu_Li_contenedor_titulo{
+    -fx-background-color: #599bcc;
+    -fx-effect: dropshadow(gaussian, darkgray, 5, 0.3, 0, 2);
+    -fx-alignment: CENTER;
+}
+
+.menu_LI .menu_LI_titulo{
+    -fx-font-size: 14;
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.menu_LI .menu_LI_menuItem{
+    -fx-padding: 0 10 0 10;
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_LEFT; 
+}
+.menu_LI .menu_LI_menuItem .label{
+    -fx-text-fill: black;
+}
+
+.menu_LI .menu_LI_menuItem:hover{
+    -fx-background-color: #f0ecf2;
+    -fx-cursor: hand;
+}
+.menu_LI .menu_LI_menuItem:hover .label{
+    -fx-font-weight: bold;
+}
+
+//titulo vista
+.titulo_vista{
+    
+    
+}
